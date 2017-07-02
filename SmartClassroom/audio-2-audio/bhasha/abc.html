@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<script  src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script>
+		var vidId= "egeMAIXYIvI";
+		var foo;
+			function UrlExists(url)
+			{
+			    var http = new XMLHttpRequest();
+			    http.open('HEAD', url, false);
+			    http.send();
+			    return http.status!=404;
+			}
+
+			$(document).ready(function() 	{
+					$.post("http://localhost:5000/audio",
+					    {
+					        id: vidId
+					    },
+					    function(data, status){
+					        console.log("Data: " + data + "\nStatus: " + status);
+					        if(status=="success")	{
+								if(!UrlExists("http://localhost:5000/static/"+vidId+".mp3"))	{
+									console.log("file not created");
+								}
+								else	{
+									console.log("success");
+									foo=new Audio("http://localhost:5000/static/"+vidId+".mp3");
+									foo.play();
+								}
+					        }
+					        else	{
+								console.log("Ajax failed");
+					        }
+					    });
+
+			});
+
+		</script>
+
+	</head>
+	<body>
+		
+	</body>
+
+</html>

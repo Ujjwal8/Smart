@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<script  src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script>
+			$(document).ready(function() 	{
+					// $.ajax({
+  			// 			type: "POST",
+					// 	  url: "localhost:5000/audio",
+					// 	  data: {id:mCSUmwP02T8},
+					// 	  success: success,
+					// 	  dataType: dataType
+					// 	}).d;
+
+
+					$.post("localhost:5000/audio",
+					    {
+					        id: "mCSUmwP02T8"
+					        
+					    },
+					    function(data, status){
+					        console.log("Data: " + data + "\nStatus: " + status);
+					    });
+			});
+
+
+		</script>
+
+	</head>
+	<body>
+		
+	</body>
+
+</html>

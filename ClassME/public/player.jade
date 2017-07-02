@@ -1,0 +1,39 @@
+.container
+
+
+.row
+    .col.s1.m1.l1
+    .col
+        h4 Learn with the Good Great
+.row
+    .col.s1.m1.l1
+    .col.s4.m4.l7
+        .col.s2.m2.l2
+            #player
+            ul.collapsible.active(data-collapsible="accordion")
+                    li
+                        .collapsible-header Ujjwal
+                    li
+                        .collapsible-header Arun
+    
+    .col.s2.m3.l3
+        #affdex_elements
+        canvas(id="myChart", width="100px", height="100px")
+.row
+
+    .col.s1.m1.l1
+    .col.s2.m2.l4
+        .mainaddcomment.active
+            .card.pad
+                .row
+                    .col.s12
+                        .row
+                            .input-field.col.s12
+                                textarea#textarea1.materialize-textarea(data-length="500")
+                                label(for="textarea1") Say Hello!
+                button.btn.waves-effect.waves-light.accent-color Submit
+                    i.material-icons.right(onclick="firebase.database().ref('/comments').push('hello')")  send
+            
+   
+        
+         
